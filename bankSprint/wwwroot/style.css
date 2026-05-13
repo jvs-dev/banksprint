@@ -607,6 +607,59 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Estilos para transações clicáveis (transferências) */
+.transaction-clickable {
+  user-select: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Comprovante */
+.comprovante-documento {
+  background: #fff;
+  border-radius: 0.5rem;
+  line-height: 1.6;
+}
+
+@media print {
+  /* Ocultar elementos não essenciais na impressão */
+  .modal-header,
+  .modal-footer,
+  #btn-print-comprovante,
+  .notification-container,
+  .navbar,
+  .btn,
+  button {
+    display: none !important;
+  }
+
+  /* Remover margens do modal para imprimir o comprovante */
+  .modal-content {
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .modal-body {
+    padding: 0 !important;
+  }
+
+  #comprovante-content {
+    margin: 0;
+    padding: 0;
+  }
+
+  #comprovante-content > div {
+    width: 100%;
+    margin: 0;
+    padding: 20mm;
+  }
+
+  body {
+    background: #fff !important;
+  }
+}
 
 @media (max-width: 480px) {
   .notification-container {
@@ -622,6 +675,6 @@ body {
 
 @media (min-width: 992px) {
   .banking-dashboard {
-    max-width: 32rem;
+    max-width: 40rem;
   }
 }

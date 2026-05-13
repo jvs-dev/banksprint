@@ -193,6 +193,31 @@
     </div>
   </div>
 
+  <!-- Modal Comprovante de Transferência -->
+  <div class="modal fade" id="modalComprovante" tabindex="-1" aria-labelledby="modalComprovanteLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 480px;">
+      <div class="modal-content rounded-4 border-0 shadow">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold" id="modalComprovanteLabel"><i class="bi bi-receipt me-2"></i>Comprovante de Transferência</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body pt-4">
+          <div id="comprovante-content" class="comprovante-documento">
+            <!-- Conteúdo gerado dinamicamente -->
+          </div>
+          <div class="mt-4 d-flex gap-2">
+            <button type="button" class="btn btn-dark btn-sm flex-grow-1" id="btn-print-comprovante" onclick="window.print();">
+              <i class="bi bi-printer me-2"></i>Imprimir
+            </button>
+            <button type="button" class="btn btn-outline-secondary btn-sm flex-grow-1" data-bs-dismiss="modal">
+              Fechar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="app.js"></script>
 </body>

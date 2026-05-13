@@ -207,6 +207,85 @@ function isTransferType(t) {
   return t === 2 || t === "Transfer";
 }
 
+function showComprovante(transaction, accountInfo) {
+  if (!isTransferType(transaction.type)) {
+    showAlert("Comprovante disponível apenas para transferências.", "info");
+    return;
+  }
+
+  const data = new Date();
+  const numeroProtocolo = Math.floor(Math.random() * 900000) + 100000;
+  
+  const content = `
+    <div style="border: 1px solid #ddd; padding: 2rem; border-radius: 0.5rem; background: #fff; color: #000; font-family: Arial, sans-serif;">
+      <div style="text-align: center; margin-bottom: 2rem; border-bottom: 2px solid #0c0c0e; padding-bottom: 1rem;">
+        <h2 style="margin: 0; color: #0c0c0e; font-size: 1.8rem;">BANKSPRINT</h2>
+        <p style="margin: 0.5rem 0 0 0; color: #666; font-size: 0.9rem;">Banco Digital de Confiança</p>
+      </div>
+
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <h3 style="margin: 0 0 0.5rem 0; color: #0c0c0e;">COMPROVANTE DE TRANSFERÊNCIA</h3>
+        <p style="margin: 0.5rem 0; color: #666; font-size: 0.85rem;">
+          <strong>Protocolo:</strong> ${numeroProtocolo.toString().padStart(6, '0')}
+        </p>
+      </div>
+
+      <div style="margin-bottom: 2rem;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+          <div>
+            <p style="margin: 0 0 0.3rem 0; color: #666; font-size: 0.8rem; text-transform: uppercase;">Data da Transação</p>
+            <p style="margin: 0; color: #0c0c0e; font-weight: bold; font-size: 0.95rem;">${formatDate(transaction.date)}</p>
+          </div>
+          <div>
+            <p style="margin: 0 0 0.3rem 0; color: #666; font-size: 0.8rem; text-transform: uppercase;">Tipo de Operação</p>
+            <p style="margin: 0; color: #0c0c0e; font-weight: bold; font-size: 0.95rem;">Transferência</p>
+          </div>
+        </div>
+
+        <div style="border: 1px solid #e0e0e0; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem; background: #f9f9f9;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+            <div>
+              <p style="margin: 0 0 0.3rem 0; color: #666; font-size: 0.8rem; text-transform: uppercase;">De (Remetente)</p>
+              <p style="margin: 0; color: #0c0c0e; font-weight: bold; font-size: 0.95rem;">${accountInfo.name}</p>
+              <p style="margin: 0.3rem 0 0 0; color: #666; font-size: 0.85rem;">Conta ID: ${accountInfo.id}</p>
+            </div>
+            <div>
+              <p style="margin: 0 0 0.3rem 0; color: #666; font-size: 0.8rem; text-transform: uppercase;">Para (Destinatário)</p>
+              <p style="margin: 0; color: #0c0c0e; font-weight: bold; font-size: 0.95rem;">Conta ID</p>
+              <p style="margin: 0.3rem 0 0 0; color: #666; font-size: 0.85rem;">Identificação na rede</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-left: 4px solid #0c0c0e; padding: 1rem; margin-bottom: 1.5rem; background: #f0f0f0;">
+          <p style="margin: 0 0 0.5rem 0; color: #666; font-size: 0.8rem; text-transform: uppercase;">Valor da Transferência</p>
+          <p style="margin: 0; color: #0c0c0e; font-weight: bold; font-size: 1.5rem;">${formatMoney(Math.abs(transaction.amount))}</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div>
+            <p style="margin: 0 0 0.3rem 0; color: #666; font-size: 0.8rem; text-transform: uppercase;">Saldo Atual</p>
+            <p style="margin: 0; color: #0c0c0e; font-weight: bold; font-size: 0.95rem;">${formatMoney(accountInfo.balance)}</p>
+          </div>
+          <div>
+            <p style="margin: 0 0 0.3rem 0; color: #666; font-size: 0.8rem; text-transform: uppercase;">Status</p>
+            <p style="margin: 0; color: #28a745; font-weight: bold; font-size: 0.95rem;">✓ Concluída</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid #ddd; padding-top: 1.5rem; text-align: center; color: #666; font-size: 0.8rem;">
+        <p style="margin: 0 0 0.5rem 0;">Este é um comprovante gerado digitalmente pelo BankSprint.</p>
+        <p style="margin: 0;">Emissão: ${new Date().toLocaleString('pt-BR')}</p>
+      </div>
+    </div>
+  `;
+
+  el("comprovante-content").innerHTML = content;
+  const modal = bootstrap.Modal.getOrCreateInstance(el("modalComprovante"));
+  modal.show();
+}
+
 function formatStatementAmount(t) {
   if (isTransferType(t.type)) return formatSignedCurrency(t.amount);
   return formatMoney(t.amount);
@@ -227,7 +306,7 @@ async function refreshStatement() {
 
   const account = body.account;
   currentUserAccountId = account.id;
-  el("user-summary").textContent = `${account.name} · ${account.email} · ${account.role}`;
+  el("user-summary").innerHTML = `<strong style="font-weight: bold; color: #fff;">ID: ${account.id}</strong> · ${account.name} · ${account.email} · ${account.role}`;
   el("balance-display").textContent = formatMoney(account.balance);
 
   renderTransferRecents();
@@ -242,11 +321,27 @@ async function refreshStatement() {
   }
   for (const t of txs) {
     const tr = document.createElement("tr");
+    const isTransfer = isTransferType(t.type);
     tr.innerHTML = `
       <td>${formatDate(t.date)}</td>
       <td>${transactionTypeLabel(t.type)}</td>
       <td class="text-end">${formatStatementAmount(t)}</td>
     `;
+    
+    if (isTransfer) {
+      tr.style.cursor = "pointer";
+      tr.classList.add("transaction-clickable");
+      tr.addEventListener("click", () => {
+        showComprovante(t, account);
+      });
+      tr.addEventListener("mouseenter", () => {
+        tr.style.backgroundColor = "#f5f5f5";
+      });
+      tr.addEventListener("mouseleave", () => {
+        tr.style.backgroundColor = "";
+      });
+    }
+    
     tbody.appendChild(tr);
   }
 }
