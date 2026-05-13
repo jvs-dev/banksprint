@@ -118,3 +118,4 @@ C:\Users\sheph\Downloads\SprintAPIs_Servicos_Web-main\bankSprint\obj\Debug\net10
 C:\Users\sheph\Downloads\SprintAPIs_Servicos_Web-main\bankSprint\obj\Debug\net10.0\bankSprint.pdb
 C:\Users\sheph\Downloads\SprintAPIs_Servicos_Web-main\bankSprint\obj\Debug\net10.0\bankSprint.genruntimeconfig.cache
 C:\Users\sheph\Downloads\SprintAPIs_Servicos_Web-main\bankSprint\obj\Debug\net10.0\ref\bankSprint.dll
+C:\Users\sheph\Downloads\SprintAPIs_Servicos_Web-main\bankSprint\obj\Debug\net10.0\bankSprint.sourcelink.json

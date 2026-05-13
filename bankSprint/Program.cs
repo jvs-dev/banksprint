@@ -7,7 +7,6 @@ using BankSprint.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
@@ -111,15 +110,9 @@ else
 
 app.UseCors("DevCors");
 
-// Serve o SPA estático da pasta ../Frontend na mesma origem da API (ex.: http://localhost:5121/).
-// Assim não depende do Live Server na porta 5500.
-var frontendPath = Path.GetFullPath(Path.Combine(app.Environment.ContentRootPath, "..", "Frontend"));
-if (Directory.Exists(frontendPath))
-{
-    var frontendFiles = new PhysicalFileProvider(frontendPath);
-    app.UseDefaultFiles(new DefaultFilesOptions { FileProvider = frontendFiles });
-    app.UseStaticFiles(new StaticFileOptions { FileProvider = frontendFiles });
-}
+// Serve arquivos estáticos da pasta wwwroot
+app.UseDefaultFiles();
+app.UseStaticFiles();
 
 app.UseAuthentication();
 app.UseAuthorization();
