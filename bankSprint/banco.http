@@ -1,0 +1,34 @@
+@Banco_HostAddress = http://localhost:5121
+
+### Documentação OpenAPI (Swagger)
+GET {{Banco_HostAddress}}/swagger/v1/swagger.json
+Accept: application/json
+
+### Cadastro
+POST {{Banco_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Maria Silva",
+  "email": "maria@exemplo.com",
+  "password": "senha123"
+}
+
+### Login (retorna JWT)
+POST {{Banco_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "maria@exemplo.com",
+  "password": "senha123"
+}
+
+### Listar contas (requer Bearer)
+GET {{Banco_HostAddress}}/api/accounts
+Authorization: Bearer {{token}}
+
+### Extrato (requer Bearer)
+GET {{Banco_HostAddress}}/api/transactions
+Authorization: Bearer {{token}}
+
+###

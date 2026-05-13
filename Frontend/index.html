@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BANKSPRINT</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg banking-navbar shadow-sm">
+    <div class="container-fluid px-3 px-lg-4">
+      <span class="navbar-brand site-title mb-0">BANKSPRINT</span>
+      <div class="d-flex align-items-center gap-2 ms-auto" id="nav-actions">
+        <div id="nav-buttons-guest" class="d-flex gap-2">
+          <button type="button" class="btn btn-outline-light btn-sm rounded-pill px-3" id="header-btn-login">Login</button>
+          <button type="button" class="btn btn-light btn-sm rounded-pill px-3 text-dark fw-semibold" id="header-btn-register">Cadastro</button>
+        </div>
+        <div id="nav-buttons-user" class="d-none">
+          <button type="button" class="btn btn-outline-light btn-sm rounded-pill px-3" id="header-btn-logout">Sair da conta</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sistema de Notificações -->
+  <div id="notification-container" class="notification-container"></div>
+
+  <main class="container py-4 py-lg-5 px-3">
+    <div class="row g-4 justify-content-center">
+      <section class="col-12 col-md-10 col-lg-6 col-xl-5" id="panel-auth">
+        <div class="card auth-card border-0 shadow-sm h-100">
+          <div class="card-header bg-white border-0 pt-4 px-4 pb-0">
+            <span class="fw-bold">Acesso</span>
+          </div>
+          <div class="card-body px-4 pb-4">
+            <ul class="nav nav-pills nav-fill gap-1 mb-4 p-1 rounded-3 bg-light" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link rounded-3 active" id="tab-login" data-bs-toggle="pill" data-bs-target="#pane-login" type="button" role="tab">Login</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link rounded-3" id="tab-register" data-bs-toggle="pill" data-bs-target="#pane-register" type="button" role="tab">Cadastro</button>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="pane-login" role="tabpanel">
+                <form id="form-login" class="vstack gap-3">
+                  <div>
+                    <label class="form-label small text-secondary" for="login-email">E-mail</label>
+                    <input type="email" class="form-control form-control-lg rounded-3" id="login-email" required autocomplete="username" placeholder="seu@email.com" />
+                  </div>
+                  <div>
+                    <label class="form-label small text-secondary" for="login-password">Senha</label>
+                    <input type="password" class="form-control form-control-lg rounded-3" id="login-password" required autocomplete="current-password" placeholder="••••••" />
+                  </div>
+                  <button type="submit" class="btn btn-dark btn-lg rounded-pill mt-2">Entrar</button>
+                </form>
+              </div>
+              <div class="tab-pane fade" id="pane-register" role="tabpanel">
+                <form id="form-register" class="vstack gap-3">
+                  <div>
+                    <label class="form-label small text-secondary" for="register-name">Nome</label>
+                    <input type="text" class="form-control form-control-lg rounded-3" id="register-name" required minlength="2" placeholder="Seu nome completo" />
+                  </div>
+                  <div>
+                    <label class="form-label small text-secondary" for="register-email">E-mail</label>
+                    <input type="email" class="form-control form-control-lg rounded-3" id="register-email" required autocomplete="email" placeholder="seu@email.com" />
+                  </div>
+                  <div>
+                    <label class="form-label small text-secondary" for="register-password">Senha</label>
+                    <input type="password" class="form-control form-control-lg rounded-3" id="register-password" required minlength="6" autocomplete="new-password" placeholder="Mínimo 6 caracteres" />
+                  </div>
+                  <button type="submit" class="btn btn-dark btn-lg rounded-pill mt-2">Cadastrar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="col-12 col-lg-8 col-xl-6 mx-auto d-none banking-dashboard" id="panel-banking">
+        <div class="balance-card shadow-lg mb-4">
+          <div class="balance-card-inner">
+            <p class="balance-user mb-2" id="user-summary">—</p>
+            <p class="balance-label mb-1">Saldo em reais</p>
+            <p class="balance-amount mb-0" id="balance-display">R$ 0,00</p>
+            <div class="action-chips action-chips--quad mt-4 pt-2">
+              <button type="button" class="action-chip" id="btn-open-withdraw" data-bs-toggle="modal" data-bs-target="#modalWithdraw" aria-label="Sacar">
+                <span class="action-chip-icon"><i class="bi bi-dash-lg"></i></span>
+                <span class="action-chip-label">Sacar</span>
+              </button>
+              <button type="button" class="action-chip" id="btn-open-deposit" data-bs-toggle="modal" data-bs-target="#modalDeposit" aria-label="Depositar">
+                <span class="action-chip-icon"><i class="bi bi-plus-lg"></i></span>
+                <span class="action-chip-label">Depositar</span>
+              </button>
+              <button type="button" class="action-chip" id="btn-transfer-nav" aria-label="Transferir">
+                <span class="action-chip-icon"><i class="bi bi-arrow-left-right"></i></span>
+                <span class="action-chip-label">Transferir</span>
+              </button>
+              <button type="button" class="action-chip" id="btn-historico" aria-label="Histórico">
+                <span class="action-chip-icon"><i class="bi bi-clock-history"></i></span>
+                <span class="action-chip-label">Histórico</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <section class="transfer-panel d-none" id="section-transfer">
+          <h2 class="section-title mb-3">Transferir</h2>
+          <form id="form-transfer" class="vstack gap-3">
+            <div>
+              <label class="form-label small text-secondary" for="transfer-to-account-id">ID da conta de destino</label>
+              <input type="number" class="form-control form-control-lg rounded-3" id="transfer-to-account-id" min="1" step="1" required placeholder="Ex.: 123" />
+            </div>
+            <div id="transfer-recents-wrap" class="d-none">
+              <p class="transfer-recents-title mb-2">Contas usadas antes</p>
+              <div class="d-flex flex-wrap gap-2" id="transfer-recents-list"></div>
+            </div>
+            <div>
+              <label class="form-label small text-secondary" for="transfer-amount">Valor (R$)</label>
+              <input type="number" class="form-control form-control-lg rounded-3" id="transfer-amount" min="0.01" step="0.01" required placeholder="0,00" />
+            </div>
+            <button type="submit" class="btn btn-dark btn-lg rounded-pill">Enviar transferência</button>
+          </form>
+        </section>
+
+        <section class="tx-section" id="section-historico">
+          <div class="d-flex justify-content-between align-items-center mb-3 px-1">
+            <h2 class="section-title mb-0">Histórico</h2>
+            <button type="button" class="btn btn-link btn-sm text-decoration-none p-0 d-flex align-items-center gap-1" id="btn-refresh">
+              <i class="bi bi-arrow-clockwise"></i>
+              <span>Atualizar</span>
+            </button>
+          </div>
+          <div class="tx-table-wrap border-0 shadow-sm">
+            <table class="table tx-table mb-0">
+              <thead>
+                <tr>
+                  <th scope="col">Data</th>
+                  <th scope="col">Tipo</th>
+                  <th scope="col" class="text-end">Valor</th>
+                </tr>
+              </thead>
+              <tbody id="statement-body">
+                <tr><td colspan="3" class="text-center text-muted py-5">Sem movimentações</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <!-- Modais: mesmos ids de formulário e inputs -->
+  <div class="modal fade" id="modalDeposit" tabindex="-1" aria-labelledby="modalDepositLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0 shadow">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold" id="modalDepositLabel"><i class="bi bi-plus-circle me-2"></i>Depositar</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body pt-2">
+          <form id="form-deposit" class="vstack gap-3">
+            <div>
+              <label class="form-label small text-secondary" for="deposit-amount">Valor (R$)</label>
+              <input type="number" class="form-control form-control-lg rounded-3" id="deposit-amount" min="0.01" step="0.01" required placeholder="100,00" />
+            </div>
+            <button type="submit" class="btn btn-dark btn-lg rounded-pill">Confirmar depósito</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalWithdraw" tabindex="-1" aria-labelledby="modalWithdrawLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0 shadow">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold" id="modalWithdrawLabel"><i class="bi bi-dash-circle me-2"></i>Sacar</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body pt-2">
+          <form id="form-withdraw" class="vstack gap-3">
+            <div>
+              <label class="form-label small text-secondary" for="withdraw-amount">Valor (R$)</label>
+              <input type="number" class="form-control form-control-lg rounded-3" id="withdraw-amount" min="0.01" step="0.01" required placeholder="100,00" />
+            </div>
+            <button type="submit" class="btn btn-dark btn-lg rounded-pill">Confirmar saque</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
