@@ -1,7 +1,8 @@
 /**
- * Mesmo hostname da pagina (localhost vs 127.0.0.1).
+ * Mesmo hostname e porta da página (localhost vs 127.0.0.1).
+ * Funciona em qualquer porta (5121, 5000, etc).
  */
-const API_BASE = `http://${window.location.hostname}:5121`;
+const API_BASE = `http://${window.location.hostname}:${window.location.port}`;
 
 const TOKEN_KEY = "banking_jwt";
 const TRANSFER_RECENTS_KEY = "bankSprint_transfer_recents";
