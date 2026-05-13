@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("bankSprint")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e765db6018a4e5e4e434a0c465920fb10df43731")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cde9f34a10c5cf2ca16c45fd9704f08f17fd44b9")]
 [assembly: System.Reflection.AssemblyProductAttribute("bankSprint")]
 [assembly: System.Reflection.AssemblyTitleAttribute("bankSprint")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

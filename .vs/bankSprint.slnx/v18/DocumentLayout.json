@@ -1,0 +1,133 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\232.005297\\banksprint\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{81FF2371-32D3-100D-D20B-51AB9A15D05B}|bankSprint\\bankSprint.csproj|c:\\users\\232.005297\\banksprint\\banksprint\\migrations\\20260513175111_novo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81FF2371-32D3-100D-D20B-51AB9A15D05B}|bankSprint\\bankSprint.csproj|solutionrelative:banksprint\\migrations\\20260513175111_novo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81FF2371-32D3-100D-D20B-51AB9A15D05B}|bankSprint\\bankSprint.csproj|c:\\users\\232.005297\\banksprint\\banksprint\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{81FF2371-32D3-100D-D20B-51AB9A15D05B}|bankSprint\\bankSprint.csproj|solutionrelative:banksprint\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81FF2371-32D3-100D-D20B-51AB9A15D05B}|bankSprint\\bankSprint.csproj|c:\\users\\232.005297\\banksprint\\banksprint\\banksprint.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{81FF2371-32D3-100D-D20B-51AB9A15D05B}|bankSprint\\bankSprint.csproj|solutionrelative:banksprint\\banksprint.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81FF2371-32D3-100D-D20B-51AB9A15D05B}|bankSprint\\bankSprint.csproj|c:\\users\\232.005297\\banksprint\\banksprint\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81FF2371-32D3-100D-D20B-51AB9A15D05B}|bankSprint\\bankSprint.csproj|solutionrelative:banksprint\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81FF2371-32D3-100D-D20B-51AB9A15D05B}|bankSprint\\bankSprint.csproj|c:\\users\\232.005297\\banksprint\\banksprint\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81FF2371-32D3-100D-D20B-51AB9A15D05B}|bankSprint\\bankSprint.csproj|solutionrelative:banksprint\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81FF2371-32D3-100D-D20B-51AB9A15D05B}|bankSprint\\bankSprint.csproj|c:\\users\\232.005297\\banksprint\\banksprint\\models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81FF2371-32D3-100D-D20B-51AB9A15D05B}|bankSprint\\bankSprint.csproj|solutionrelative:banksprint\\models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{81FF2371-32D3-100D-D20B-51AB9A15D05B}|bankSprint\\bankSprint.csproj|c:\\users\\232.005297\\banksprint\\banksprint\\models\\transactiontype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81FF2371-32D3-100D-D20B-51AB9A15D05B}|bankSprint\\bankSprint.csproj|solutionrelative:banksprint\\models\\transactiontype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20260513175111_novo.cs",
+              "DocumentMoniker": "C:\\Users\\232.005297\\banksprint\\bankSprint\\Migrations\\20260513175111_novo.cs",
+              "RelativeDocumentMoniker": "bankSprint\\Migrations\\20260513175111_novo.cs",
+              "ToolTip": "C:\\Users\\232.005297\\banksprint\\bankSprint\\Migrations\\20260513175111_novo.cs",
+              "RelativeToolTip": "bankSprint\\Migrations\\20260513175111_novo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T17:51:12.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "bankSprint.csproj",
+              "DocumentMoniker": "C:\\Users\\232.005297\\banksprint\\bankSprint\\bankSprint.csproj",
+              "RelativeDocumentMoniker": "bankSprint\\bankSprint.csproj",
+              "ToolTip": "C:\\Users\\232.005297\\banksprint\\bankSprint\\bankSprint.csproj",
+              "RelativeToolTip": "bankSprint\\bankSprint.csproj",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-13T17:49:42.567Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Transaction.cs",
+              "DocumentMoniker": "C:\\Users\\232.005297\\banksprint\\bankSprint\\Models\\Transaction.cs",
+              "RelativeDocumentMoniker": "bankSprint\\Models\\Transaction.cs",
+              "ToolTip": "C:\\Users\\232.005297\\banksprint\\bankSprint\\Models\\Transaction.cs",
+              "RelativeToolTip": "bankSprint\\Models\\Transaction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T17:49:35.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TransactionType.cs",
+              "DocumentMoniker": "C:\\Users\\232.005297\\banksprint\\bankSprint\\Models\\TransactionType.cs",
+              "RelativeDocumentMoniker": "bankSprint\\Models\\TransactionType.cs",
+              "ToolTip": "C:\\Users\\232.005297\\banksprint\\bankSprint\\Models\\TransactionType.cs",
+              "RelativeToolTip": "bankSprint\\Models\\TransactionType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T17:49:31.576Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Account.cs",
+              "DocumentMoniker": "C:\\Users\\232.005297\\banksprint\\bankSprint\\Models\\Account.cs",
+              "RelativeDocumentMoniker": "bankSprint\\Models\\Account.cs",
+              "ToolTip": "C:\\Users\\232.005297\\banksprint\\bankSprint\\Models\\Account.cs",
+              "RelativeToolTip": "bankSprint\\Models\\Account.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T17:49:29.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\232.005297\\banksprint\\bankSprint\\appsettings.json",
+              "RelativeDocumentMoniker": "bankSprint\\appsettings.json",
+              "ToolTip": "C:\\Users\\232.005297\\banksprint\\bankSprint\\appsettings.json",
+              "RelativeToolTip": "bankSprint\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-13T17:49:18.126Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\232.005297\\banksprint\\bankSprint\\Program.cs",
+              "RelativeDocumentMoniker": "bankSprint\\Program.cs",
+              "ToolTip": "C:\\Users\\232.005297\\banksprint\\bankSprint\\Program.cs",
+              "RelativeToolTip": "bankSprint\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T17:47:28.71Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
